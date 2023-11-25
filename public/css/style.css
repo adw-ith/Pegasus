@@ -21,6 +21,8 @@ body{
 
 footer{
     background: black;
+    border-radius: 100dvw;
+    padding: 1rem;
 }
 
 .logo{
@@ -37,6 +39,17 @@ footer{
     background: #000;
 }
 
+.bg-green{
+    background: green;
+}
+
+.bg-yellow{
+    background: yellow;
+}
+
+.bg-cyan{
+    background: yellowgreen;
+}
 
 .nav-item{
     text-decoration: none;
@@ -179,7 +192,6 @@ h1{
 }
 
 .bar{
-    background: rgb(0, 0, 0);
     border-radius: 100vw;
     height: 5px;
 }

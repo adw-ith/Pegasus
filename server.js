@@ -5,24 +5,22 @@ const path = require('path');
 
 const PORT = 3000;
 
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-let sensorData = ''; // Variable to store received sensor data
-
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
-});
+let receivedDataFromESP32 = ''; 
 
 app.post('/data', (req, res) => {
-  sensorData = req.body.sensorValue; // Assuming ESP32 sends 'sensorValue'
-  console.log('Data received from ESP32:', sensorData);
+  receivedDataFromESP32 = req.body.dataToSend;
+  console.log('Data received from ESP32:', receivedDataFromESP32);
   res.send('Data received successfully');
 });
 
 app.get('/getdata', (req, res) => {
-  res.json({ sensorData });
+  res.json({ data: receivedDataFromESP32 });
 });
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

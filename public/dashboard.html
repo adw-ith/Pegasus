@@ -20,9 +20,9 @@
       <div class="nav w-100 bg-black px-4 p-2">
         <div class="col-3"><img class="logo" src="./images/logo.png" alt=""></div>
         <div class="navitems col-7 d-flex justify-content-end align-items-center">
-          <a class="nav-item" href="#"><h6>Home</h6></a>
+          <a class="nav-item" href="index.html"><h6>Home</h6></a>
           <a class="nav-item" href="#"><h6>About</h6></a>
-          <a class="nav-item" href="#"><h6>Contact</h6></a>
+          <a class="nav-item" href="contact.html"><h6>Contact</h6></a>
         </div>
       </div>
     </header>
@@ -32,24 +32,24 @@
           <h2>Cities</h2>
           <ul class="cities">
             <li class="city">
-              <h6>HELLO <span>86%</span></h6>
-              <div class="bar" style="width: 86%;"></div>
+              <h6>City 1 <span>86%</span></h6>
+              <div class="bar bg-warning" style="width: 86%;"></div>
             </li>
             <li class="city">
-              <h6>HELLO <span>86%</span></h6>
-              <div class="bar" style="width: 86%;"></div>
+              <h6>City 2 <span>36%</span></h6>
+              <div class="bar bg-cyan" style="width: 36%;"></div>
             </li>
             <li class="city">
-              <h6>HELLO <span>86%</span></h6>
-              <div class="bar" style="width: 86%;"></div>
+              <h6>City 3 <span>100%</span></h6>
+              <div class="bar bg-danger" style="width: 100%;"></div>
             </li>
             <li class="city">
-              <h6>HELLO <span>86%</span></h6>
-              <div class="bar" style="width: 86%;"></div>
+              <h6>City 4 <span>54%</span></h6>
+              <div class="bar bg-yellow" style="width: 54%;"></div>
             </li>
             <li class="city">
-              <h6>HELLO <span>86%</span></h6>
-              <div class="bar" style="width: 86%;"></div>
+              <h6>City 5 <span>17%</span></h6>
+              <div class="bar bg-green" style="width: 17%;"></div>
             </li>
           </ul>
         </div>
@@ -105,14 +105,19 @@
             </div>
         </div>
         <div class="dataDisplay">Hello</div>
-    </section>
-    <footer>
-      <div class="container">
-        <!-- <div class="row">
-          <img src="./images/logo.png" alt="">
-        </div> -->
-      </div>
-    </footer>
+        <footer>
+          <div class="container">
+            <div class="row">
+              <div class="col-6">
+                <img class="w-25" src="./images/logo.png" alt="">
+              </div>
+              <div class="col-3"></div>
+              <div class="col-3"></div>
+            </div>
+          </div>
+        </footer>
+      </section>
+
     <script>
       function getData() {
         fetch('/getdata')
