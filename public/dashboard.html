@@ -33,52 +33,64 @@
           <ul class="cities">
             <li class="city">
               <h6>HELLO <span>86%</span></h6>
-              <div class="bar"></div>
+              <div class="bar" style="width: 86%;"></div>
             </li>
             <li class="city">
               <h6>HELLO <span>86%</span></h6>
-              <div class="bar"></div>
+              <div class="bar" style="width: 86%;"></div>
             </li>
             <li class="city">
               <h6>HELLO <span>86%</span></h6>
-              <div class="bar"></div>
+              <div class="bar" style="width: 86%;"></div>
             </li>
             <li class="city">
               <h6>HELLO <span>86%</span></h6>
-              <div class="bar"></div>
+              <div class="bar" style="width: 86%;"></div>
             </li>
             <li class="city">
               <h6>HELLO <span>86%</span></h6>
-              <div class="bar"></div>
+              <div class="bar" style="width: 86%;"></div>
             </li>
           </ul>
         </div>
       </div>
       <div class="aqi-container row pb-4">
-        <div class="aqi row col-md-4 gap-2 gx-4 text-center px-4 justify-content-center">
+        <div class="col-md-4 px-4 pb-4">
+        <div class="aqi row text-center justify-content-center">
           <h2 class="pb-2">Air Pollution Index Scale</h2>
-          <div class="aqi-c col-5 bg-1">
-            <h5 class="pt-3">Very Low</h5>
-            <p>0-25</p>
+          <div class="col-6 pb-4">
+            <div class="aqi-c bg-1">
+              <h5 class="pt-3">Very Low</h5>
+              <p>0-25</p>
+            </div>
           </div>
-          <div class="aqi-c col-5 bg-2">
-            <h5 class="pt-3">Low</h5>
-            <p>25-50</p>
+          <div class="col-6 pb-4">
+            <div class="aqi-c bg-2">
+              <h5 class="pt-3">Low</h5>
+              <p>25-50</p>
+            </div>
           </div>
-          <div class="aqi-c col-5 bg-3">
-            <h5 class="pt-3">Medium</h5>
-            <p>50-75</p>
+          <div class="col-6 pb-4">
+            <div class="aqi-c bg-3">
+              <h5 class="pt-3">Medium</h5>
+              <p>50-75</p>
+            </div>
           </div>
-          <div class="aqi-c col-5 bg-4">
-            <h5 class="pt-3">High</h5>
-            <p>75-100</p>
+          <div class="col-6 pb-4">
+            <div class="aqi-c bg-4">
+              <h5 class="pt-3">High</h5>
+              <p>75-100</p>
+            </div>
           </div>
-          <div class="aqi-c col-5 bg-5">
-            <h5 class="pt-3">Very High</h5>
-            <p>>100</p>
+          <div class="col-6 pb-4">
+            <div class="aqi-c bg-5">
+              <h5 class="pt-3">Very High</h5>
+              <p>>100</p>
+            </div>
           </div>
         </div>
-        <div class="col-md-8 px-4">
+      </div>
+        <div class="col-md-8 px-4 pb-4">
             <div class="info">
                 <h5>How does API work?</h5>
                 <p>
@@ -92,24 +104,30 @@
                 </p>
             </div>
         </div>
-        <div class="dataDisplay"></div>
+        <div class="dataDisplay">Hello</div>
     </section>
+    <footer>
+      <div class="container">
+        <!-- <div class="row">
+          <img src="./images/logo.png" alt="">
+        </div> -->
+      </div>
+    </footer>
     <script>
-      function getDataFromServer() {
-        fetch('/getdata') 
+      function getData() {
+        fetch('/getdata')
           .then(response => response.json())
           .then(data => {
-            const dataDisplayDiv = document.getElementById('dataDisplay');
-            dataDisplayDiv.innerHTML = data.data;
+            document.getElementById('dataDisplay').innerText = `Received Data: ${data.sensorData}`;
           })
           .catch(error => {
             console.error('Error fetching data:', error);
           });
       }
-      window.onload = function() {
-        getDataFromServer();
-        setInterval(getDataFromServer, 3000); 
-      };
+  
+      // Update data every 3 seconds
+      setInterval(getData, 3000);
+      getData(); // Fetch initial data on page load
     </script>
   </body>
 </html>
